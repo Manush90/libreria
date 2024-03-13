@@ -4,12 +4,14 @@ import Card from "react-bootstrap/Card";
 import fantasy from "../data/fantasy.json";
 
 const BookList = () => {
-  // Estrai i primi 10 libri dall'array fantasy
-  const firstTenBooks = fantasy.slice(1, 11);
+  //   const firstTenBooks = fantasy.slice(1, 11);
+  const selectedIndices = [1, 2, 3, 9, 14, 18, 20, 21, 23, 25];
 
+  // Filtra gli elementi dell'array horror basandoti sugli indici desiderati
+  const selectedBooks = fantasy.filter((book, index) => selectedIndices.includes(index));
   return (
     <>
-      {firstTenBooks.map((book) => (
+      {selectedBooks.map((book) => (
         <Card className="p-0 mx-2 my-3" key={book.id} style={{ width: "12rem", height: "22rem" }}>
           <Card.Img
             variant="top"
