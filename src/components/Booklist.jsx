@@ -5,7 +5,7 @@ import fantasy from "../data/fantasy.json";
 
 const BookList = () => {
   // Estrai i primi 10 libri dall'array fantasy
-  const firstTenBooks = fantasy.slice(0, 10);
+  const firstTenBooks = fantasy.slice(1, 11);
 
   return (
     <>

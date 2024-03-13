@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 const MyNav = function () {
   return (
     <>
-      <Navbar bg="danger" className="mb-3 align-content-center" data-bs-theme="dark">
+      <Navbar bg="success" className="mb-3 align-content-center " data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">Libreria</Navbar.Brand>
           <Nav className="me-auto">

@@ -15,12 +15,13 @@ function App() {
       <MyNav></MyNav>
       <Container fluid>
         <Row className="justify-content-center gap-2 mb-2">
+          <h2 className="text-center text-white">Fantasy</h2>
           <div className="d-flex justify-content-center">
             <SingleBook index={0}></SingleBook>
           </div>
-          <div className="d-flex">
-            <Booklist></Booklist>
-          </div>
+
+          <Booklist></Booklist>
+          <h2 className="text-center text-white">Horror</h2>
           <AllTheBooks></AllTheBooks>
         </Row>
       </Container>

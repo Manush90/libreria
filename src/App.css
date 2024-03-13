@@ -6,4 +6,9 @@
 }
 .card:hover {
   scale: 1.1;
+  border-color: rgb(16, 85, 31);
+}
+
+body {
+  background-color: rgb(198, 223, 153) !important;
 }
