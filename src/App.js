@@ -6,6 +6,7 @@ import { Row } from "react-bootstrap";
 import MyNav from "./components/MyNav";
 import Welcome from "./components/Welcome";
 import SingleBook from "./components/SingleBook";
+import Booklist from "./components/Booklist";
 
 function App() {
   return (
@@ -14,8 +15,11 @@ function App() {
       <MyNav></MyNav>
       <Container fluid>
         <Row className="justify-content-center gap-2 mb-2">
-          <div>
+          <div className="d-flex justify-content-center">
             <SingleBook index={0}></SingleBook>
+          </div>
+          <div className="d-flex">
+            <Booklist></Booklist>
           </div>
           <AllTheBooks></AllTheBooks>
         </Row>

@@ -5,8 +5,6 @@ const Welcome = function () {
     <Alert className="text-center m-0" variant="danger">
       <Alert.Heading>Benvenuto !</Alert.Heading>
       <p>Benvenuto Nella Librearia più terrificante del web!</p>
-      <hr />
-      <p className="mb-0">Dai un'occhiata alla nostra selezione Horror</p>
     </Alert>
   );
 };
