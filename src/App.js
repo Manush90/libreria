@@ -15,16 +15,17 @@ function App() {
       <MyNav />
       <Container fluid>
         <Row className="justify-content-center gap-2 mb-2">
+          <div className="bg-white divPromo text-center">
+            <h3>Ultime Uscite</h3>
+            <h1>In Evidenza</h1>
+            <p>
+              Non perderti le proposte più interessanti <br />
+              del momento.
+            </p>
+          </div>
           <div className="d-flex justify-content-center wrap">
-            <div className="bg-white divPromo">
-              <h3>Ultime Uscite</h3>
-              <h1>In Evidenza</h1>
-              <p>
-                Non perderti le proposte più interessanti <br />
-                del momento.
-              </p>
-            </div>
             <SingleBook index={0} />
+            <SingleBook index={33} />
             <SingleBook index={9} />
             <SingleBook index={76} />
           </div>
