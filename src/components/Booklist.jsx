@@ -4,10 +4,7 @@ import Card from "react-bootstrap/Card";
 import fantasy from "../data/fantasy.json";
 
 const BookList = () => {
-  //   const firstTenBooks = fantasy.slice(1, 11);
   const selectedIndices = [1, 2, 3, 9, 14, 18, 20, 21, 23, 25];
-
-  // Filtra gli elementi dell'array horror basandoti sugli indici desiderati
   const selectedBooks = fantasy.filter((book, index) => selectedIndices.includes(index));
   return (
     <>
