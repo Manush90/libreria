@@ -8,18 +8,25 @@ const SingleBook = ({ index }) => {
 
   return (
     <Card className="p-0 mx-2 my-3" style={{ width: "12rem", height: "22rem" }}>
+      <span
+        class="badge redspan"
+        style={{ position: "absolute", top: "-10px", right: "-15px", zIndex: "0" }}
+      >
+        Novità
+      </span>
       <Card.Img
         variant="top"
         src={book.img}
         style={{ width: "100%", height: "50%", objectFit: "cover" }}
       />
+
       <Card.Body className="text-center">
         <Card.Title style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
           {book.title}
         </Card.Title>
         <Card.Text>{book.price} €</Card.Text>
         <Card.Text>{book.category}</Card.Text>
-        <Button variant="primary">Compra ora</Button>
+        <Button variant="warning">Compra ora</Button>
       </Card.Body>
     </Card>
   );
