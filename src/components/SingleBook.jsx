@@ -51,7 +51,8 @@ class SingleBook extends Component {
             <Button variant="warning">Compra ora</Button>
           </Card.Body>
         </Card>
-        {selected && <CommentArea />} {/* Mostra CommentArea solo se selected è true */}
+        {selected && <CommentArea elementId={book.asin} />}{" "}
+        {/* Mostra CommentArea solo se selected è true */}
       </div>
     );
   }

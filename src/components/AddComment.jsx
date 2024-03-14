@@ -20,6 +20,7 @@ class AddComment extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     const { author, comment, rate } = this.state;
+    const { asin, elementId } = this.props;
 
     try {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
@@ -28,7 +29,7 @@ class AddComment extends Component {
           "Content-Type": "application/json",
           Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxYTFmZTRjNTllYzAwMTk5MGQ3MTYiLCJpYXQiOjE3MDkyODU4ODYsImV4cCI6MTcxMDQ5NTQ4Nn0.J9V-sXleTIQjLmW95Xr8Yw4skeZ7aEqUogE8vmt5pmQ`,
         },
-        body: JSON.stringify({ author, comment, rate }),
+        body: JSON.stringify({ author, comment, rate, asin, elementId }),
       });
       if (!response.ok) {
         throw new Error("Failed to add comment");
@@ -48,8 +49,8 @@ class AddComment extends Component {
 
     return (
       <div>
-        <h2>Aggiungi un commento</h2>
-        {showMessage && <p>Recensione inserita!</p>}{" "}
+        <h4>Aggiungi un commento</h4>
+        {showMessage && <p>Recensione inserita!</p>}
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="author">Autore:</label>
