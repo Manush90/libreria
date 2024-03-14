@@ -6,9 +6,66 @@
 }
 .card:hover {
   scale: 1.1;
-  border-color: rgb(16, 85, 31);
+  border-color: rgb(255, 0, 0);
 }
 
 body {
-  background-color: rgb(198, 223, 153) !important;
+  background-image: url(https://cdn.kibrispdr.org/data/232/foto-wallpaper-whatsapp-4.jpg);
+}
+
+.textred {
+  color: red;
+}
+
+.redspan {
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+}
+.navFix {
+  width: 100%;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1000 !important;
+}
+
+h2 {
+  font-family: fantasy;
+}
+
+h1 {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: red !important;
+  font-weight: bolder;
+  font-weight: 400;
+}
+
+h3 {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bolder;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 40px !important;
+  padding-top: 20px;
+  margin-bottom: 0px !important;
+}
+
+p {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 300;
+  font-size: medium;
+}
+
+.divPromo {
+  height: 352px;
+  margin-top: 20px;
+  border-radius: 16px;
+}
+
+.wrap {
+  flex-wrap: wrap !important;
 }
