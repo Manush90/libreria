@@ -71,3 +71,10 @@ p {
 .wrap {
   flex-wrap: wrap !important;
 }
+
+.commentarea {
+  background-color: #fff3cd;
+  border: 2px solid;
+  border-radius: 10px;
+  height: fit-content;
+}

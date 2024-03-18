@@ -23,6 +23,7 @@ const MyNav = function () {
             <NavDropdown title="Category" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Horror</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Fantasy</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">New Release</NavDropdown.Item>
 
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Tutti i libri</NavDropdown.Item>

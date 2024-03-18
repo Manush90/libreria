@@ -7,6 +7,7 @@ import MyNav from "./components/MyNav";
 import Welcome from "./components/Welcome";
 import SingleBook from "./components/SingleBook";
 import Booklist from "./components/Booklist";
+import CommentArea from "./components/CommentArea";
 
 function App() {
   return (
@@ -30,7 +31,17 @@ function App() {
             <SingleBook index={76} />
           </div>
           <h2 className=" text-center">Fantasy</h2>
-          <Booklist></Booklist>
+          <div className="container text-center">
+            <div className="row pe-4">
+              <div className="col-12 col-lg-7 col-md-7 d-flex  flex-wrap">
+                <Booklist></Booklist>
+              </div>
+              <div className="col-12 col-lg-5 col-md-5 pt-2 commentarea">
+                <CommentArea></CommentArea>
+              </div>
+            </div>
+          </div>
+
           <h2 className="text-center ">Horror</h2>
           <AllTheBooks />
         </Row>

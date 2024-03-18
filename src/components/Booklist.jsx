@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import fantasy from "../data/fantasy.json";
 
 const BookList = () => {
-  const selectedIndices = [1, 2, 3, 9, 14, 18, 20, 21, 23, 25];
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleCardClick = (index) => {
+    setActiveCard(index === activeCard ? null : index);
+  };
+
+  const selectedIndices = [1, 2, 3, 9, 14, 18];
   const selectedBooks = fantasy.filter((book, index) => selectedIndices.includes(index));
+
   return (
     <>
-      {selectedBooks.map((book) => (
-        <Card className="p-0 mx-2 my-3" key={book.id} style={{ width: "12rem", height: "22rem" }}>
+      {selectedBooks.map((book, index) => (
+        <Card
+          className={`p-0 mx-2 my-3 ${activeCard === index ? "active" : ""}`}
+          key={index}
+          style={{ width: "12rem", height: "22rem", cursor: "pointer" }}
+          onClick={() => handleCardClick(index)}
+        >
           <Card.Img
             variant="top"
             src={book.img}

@@ -27,7 +27,7 @@ class AddComment extends Component {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxYTFmZTRjNTllYzAwMTk5MGQ3MTYiLCJpYXQiOjE3MDkyODU4ODYsImV4cCI6MTcxMDQ5NTQ4Nn0.J9V-sXleTIQjLmW95Xr8Yw4skeZ7aEqUogE8vmt5pmQ`,
+          Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY4NWEwN2FiYWQyODAwMTliZDUyYzYiLCJpYXQiOjE3MTA3NzQ3OTEsImV4cCI6MTcxMTk4NDM5MX0.Ep10PX0FPUvNBnxJvcpmSDWkw4_TjxesDsOvBTZW0_4`,
         },
         body: JSON.stringify({ author, comment, rate, asin, elementId }),
       });
