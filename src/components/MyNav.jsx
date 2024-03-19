@@ -2,31 +2,25 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import logo from "../logolibrary.png";
 
 const MyNav = function () {
   return (
-    <Navbar expand="lg" className="bg-success-subtle ">
-      <Container>
-        <Navbar.Brand href="#home"></Navbar.Brand>
-        <img
-          alt=""
-          src="https://i.pinimg.com/originals/5f/fb/de/5ffbdeceb84323decd76084b2efca958.png"
-          width="50"
-          height="50"
-          className="d-inline-block align-top"
-        />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
-            <NavDropdown title="Category" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Horror</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Fantasy</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">New Release</NavDropdown.Item>
-
+    <Navbar expand="lg" className="bg-warning p-0">
+      <Container fluid>
+        <Navbar.Brand href="">
+          <img src={logo} width="70" height="70" className="d-inline-block align-top" alt="Logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
+            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href="#action2">About</Nav.Link>
+            <NavDropdown title="Category" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Fantasy</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Horror</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Tutti i libri</NavDropdown.Item>
+              <NavDropdown.Item href="#action5">Tutti i Libri</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

@@ -1,31 +1,22 @@
-import React from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import horror from "../data/horror.json";
+import { Card, Col, Row } from "react-bootstrap";
+import fantasy from "../data/fantasy.json";
 
-const AllTheBooks = function () {
+const AllTheBooks = () => {
   return (
-    <>
-      {horror.map((book) => (
-        <Card className="p-0 mx-2 my-3" key={book.id} style={{ width: "12rem", height: "22rem" }}>
-          <Card.Img
-            variant="top"
-            src={book.img}
-            style={{ width: "100%", height: "50%", objectFit: "cover" }}
-          />
-          <Card.Body className="text-center">
-            <Card.Title
-              style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
-            >
-              {book.title}
-            </Card.Title>
-            <Card.Text>{book.price} €</Card.Text>
-            <Card.Text>{book.category}</Card.Text>
-            <Button variant="primary">Compra ora</Button>
-          </Card.Body>
-        </Card>
-      ))}
-    </>
+    <Row className="g-2">
+      {fantasy.map((book) => {
+        return (
+          <Col xs={12} md={4} key={book.asin}>
+            <Card className="book-cover d-flex flex-column">
+              <Card.Img variant="top" src={book.img} />
+              <Card.Body>
+                <Card.Title>{book.title}</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+        );
+      })}
+    </Row>
   );
 };
 

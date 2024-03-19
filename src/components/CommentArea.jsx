@@ -1,54 +1,56 @@
-import React, { Component } from "react";
-import CommentsList from "./CommentsList";
+import { Component } from "react";
+import CommentList from "./CommentList";
 import AddComment from "./AddComment";
+import Loading from "./Loading";
+import Error from "./Error";
 
 class CommentArea extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      comments: [],
-      error: null,
-    };
-  }
+  state = {
+    comments: [],
+    isLoading: false,
+    isError: false,
+  };
 
-  componentDidMount() {
-    this.fetchComments();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.asin !== prevProps.asin) {
-      this.fetchComments();
-    }
-  }
-
-  fetchComments = async () => {
-    try {
-      const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/comments/${this.props.asin}`,
-        {
-          headers: {
-            Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY4NWEwN2FiYWQyODAwMTliZDUyYzYiLCJpYXQiOjE3MTA3NzQ3OTEsImV4cCI6MTcxMTk4NDM5MX0.Ep10PX0FPUvNBnxJvcpmSDWkw4_TjxesDsOvBTZW0_4`,
-          },
+  componentDidUpdate = async (prevProps) => {
+    if (prevProps.asin !== this.props.asin) {
+      this.setState({
+        isLoading: true,
+      });
+      try {
+        let response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/comments/" + this.props.asin,
+          {
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY4YzIyNTA0NTg5ZjAwMTk0OGU1MTIiLCJpYXQiOjE3MTA4MDE0NDUsImV4cCI6MTcxMjAxMTA0NX0.fV3XmkM7Tgl1pSXgajcRtt1ziZ7dEf6Stog0uNUqkpo",
+            },
+          }
+        );
+        console.log(response);
+        if (response.ok) {
+          let comments = await response.json();
+          this.setState({
+            comments: comments,
+            isLoading: false,
+            isError: false,
+          });
+        } else {
+          this.setState({ isLoading: false, isError: true });
         }
-      );
-      if (!response.ok) {
-        throw new Error("Failed to fetch comments");
+      } catch (error) {
+        console.log(error);
+        this.setState({ isLoading: false, isError: true });
       }
-      const comments = await response.json();
-      this.setState({ comments });
-    } catch (error) {
-      this.setState({ error: error.message });
     }
   };
 
   render() {
-    const { comments, error } = this.state;
-
     return (
-      <div className="d-flex flex-column">
-        <CommentsList comments={comments} />
-        <AddComment fetchComments={this.fetchComments} />
-        {error && <p>Error: {error}</p>}
+      <div className="text-center">
+        {this.state.isLoading && <Loading />}
+        {this.state.isError && <Error />}
+        <AddComment asin={this.props.asin} />
+        <CommentList commentsToShow={this.state.comments} />
       </div>
     );
   }
